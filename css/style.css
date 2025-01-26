@@ -512,6 +512,7 @@ footer .credit a {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.7);
+  align-items: center;
 }
 
 .modal-container {
@@ -682,5 +683,10 @@ footer .credit a {
 @media (max-width: 450px) {
   html {
     font-size: 55%;
+  }
+
+  /* Item Detail */
+  .modal-container {
+    height: 50vh;
   }
 }
