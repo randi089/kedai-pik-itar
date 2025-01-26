@@ -126,13 +126,17 @@ body {
 .shopping-cart {
   position: absolute;
   top: 100%;
-  right: 0;
+  right: -100%;
   height: 100vh;
   width: 35rem;
   padding: 0 1.5rem;
-  color: var(--primary);
+  color: var(--bg);
   background-color: #fff;
-  display: none;
+  transition: 0.3s;
+}
+
+.shopping-cart.active {
+  right: 0;
 }
 
 .shopping-cart .cart-item {
@@ -142,11 +146,31 @@ body {
   gap: 1.5rem;
   padding-bottom: 1rem;
   border-bottom: 1px dashed #666;
+  position: relative;
 }
 
 .shopping-cart img {
   height: 6rem;
   border-radius: 50%;
+}
+
+.shopping-cart h3 {
+  font-size: 1.6rem;
+  padding-bottom: 0.5;
+}
+
+.shopping-cart .item-price {
+  font-size: 1.2rem;
+}
+
+.shopping-cart .remove-item {
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.shopping-cart .remove-item:hover {
+  color: var(--primary);
 }
 
 /* Hero Section */
@@ -370,7 +394,8 @@ body {
   color: var(--primary);
 }
 
-.items .item-stars .star-full {
+.items .item-stars .star-full,
+.modal .star-full {
   fill: var(--primary);
 }
 
@@ -475,6 +500,90 @@ footer .credit a {
   font-weight: 700;
 }
 
+/* Modal Box */
+/* Item Detail */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-container {
+  position: relative;
+  background-color: #fefefe;
+  color: var(--bg);
+  margin: 15% auto;
+  padding: 1.2rem;
+  border: 1px solid #666;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  animation: animateModal 0.5s;
+}
+
+@keyframes animateModal {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.modal-container .close-icon {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.modal-content {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.modal-content img {
+  height: 17rem;
+  margin-right: 2rem;
+}
+
+.modal-content p {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  margin-top: 1.2rem;
+}
+
+.modal-content button {
+  background-color: var(--primary);
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  width: 12rem;
+  color: #fff;
+  margin-top: 1rem;
+  padding: 1rem 1.6rem;
+  cursor: pointer;
+}
+
+.modal-content .item-price span {
+  text-decoration: line-through;
+}
+
+.modal .item-stars {
+  color: var(--primary);
+}
+
 /* Media Queries */
 
 /* Laptop */
@@ -553,7 +662,7 @@ footer .credit a {
     font-size: 1.6rem;
   }
 
-  /* Procuk Tablet */
+  /* Produk Tablet */
   .produk p {
     font-size: 1.2rem;
   }
@@ -561,6 +670,11 @@ footer .credit a {
   /* Contact Tablet */
   .contact .row form {
     padding-top: 0;
+  }
+
+  /* Item Detail */
+  .modal-content {
+    flex-wrap: wrap;
   }
 }
 

@@ -33,7 +33,7 @@
         <button type="button" id="search-button">
           <i data-feather="search"></i>
         </button>
-        <button type="button" id="shopping-cart">
+        <button type="button" id="shopping-cart-button">
           <i data-feather="shopping-cart"></i>
         </button>
         <button type="button" id="hamburger-menu">
@@ -54,6 +54,22 @@
           <img src="img/unggulan/jagoan-neon.jpg" alt="Produk 1" />
           <div class="item-detail">
             <h3>Permen Jagoan Neon</h3>
+            <div class="item-price">IDR 500</div>
+          </div>
+          <i data-feather="trash-2" class="remove-item"></i>
+        </div>
+        <div class="cart-item">
+          <img src="img/unggulan/silkys-marshmallow.jpg" alt="Produk 2" />
+          <div class="item-detail">
+            <h3>Silkys Marshmallow</h3>
+            <div class="item-price">IDR 1K</div>
+          </div>
+          <i data-feather="trash-2" class="remove-item"></i>
+        </div>
+        <div class="cart-item">
+          <img src="img/unggulan/royale-500.jpg" alt="Produk 3" />
+          <div class="item-detail">
+            <h3>Royale 500</h3>
             <div class="item-price">IDR 500</div>
           </div>
           <i data-feather="trash-2" class="remove-item"></i>
@@ -156,7 +172,9 @@
         <div class="item-card">
           <div class="item-icons">
             <button type="button"><i data-feather="shopping-cart"></i></button>
-            <button type="button"><i data-feather="eye"></i></button>
+            <button type="button" class="item-detail-button">
+              <i data-feather="eye"></i>
+            </button>
           </div>
           <div class="item-image">
             <img src="img/unggulan/jagoan-neon.jpg" alt="Produk 1" />
@@ -176,7 +194,9 @@
         <div class="item-card">
           <div class="item-icons">
             <button type="button"><i data-feather="shopping-cart"></i></button>
-            <button type="button"><i data-feather="eye"></i></button>
+            <button type="button" class="item-detail-button">
+              <i data-feather="eye"></i>
+            </button>
           </div>
           <div class="item-image">
             <img src="img/unggulan/silkys-marshmallow.jpg" alt="Produk 2" />
@@ -196,7 +216,9 @@
         <div class="item-card">
           <div class="item-icons">
             <button type="button"><i data-feather="shopping-cart"></i></button>
-            <button type="button"><i data-feather="eye"></i></button>
+            <button type="button" class="item-detail-button">
+              <i data-feather="eye"></i>
+            </button>
           </div>
           <div class="item-image">
             <img src="img/unggulan/royale-500.jpg" alt="Produk 3" />
@@ -269,6 +291,38 @@
       </div>
     </footer>
     <!-- Footer End -->
+
+    <!-- Modal Box Item Detail Start -->
+    <div class="modal" id="item-detail-modal">
+      <div class="modal-container">
+        <button type="button" class="close-icon">
+          <i data-feather="x"></i>
+        </button>
+        <div class="modal-content">
+          <img src="img/unggulan/jagoan-neon.jpg" alt="Produk 1" />
+          <div class="item-content">
+            <h3>Permen Jagoan Neon</h3>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Accusamus, iure. Laborum rem maiores quae quasi distinctio,
+              recusandae enim aspernatur blanditiis vel porro quos in libero.
+            </p>
+            <div class="item-stars">
+              <i data-feather="star" class="star"></i>
+              <i data-feather="star" class="star"></i>
+              <i data-feather="star" class="star"></i>
+              <i data-feather="star" class="star"></i>
+              <i data-feather="star" class="star"></i>
+            </div>
+            <div class="item-price">IDR 500 <span>IDR 1K</span></div>
+            <button type="button">
+              <i data-feather="shopping-cart"></i><span>add to cart</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Box Item Detail End -->
 
     <!-- Father Icons -->
     <script>
