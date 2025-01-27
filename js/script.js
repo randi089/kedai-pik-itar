@@ -47,51 +47,15 @@ document.addEventListener("click", function (e) {
 
 // Modal Box
 const itemDetailModal = document.querySelector("#item-detail-modal");
-const itemDetailButtons = document.querySelectorAll(".item-detail-button");
-const namaProduk = document.querySelector(".modal h3");
-const imageProduk = document.querySelector(".modal img");
-const harga = document.querySelector(".modal .item-price");
-const stars = document.querySelectorAll(".star");
-const dataProduk = [
-  {
-    nama: "Permen Jagoan Neon",
-    stars: 5,
-    harga: "IDR 500",
-    image: "jagoan-neon.jpg",
-    hlama: "IDR 1K",
-  },
-  {
-    nama: "Silkys Marshmallow",
-    stars: 4,
-    harga: "IDR 1K",
-    image: "silkys-marshmallow.jpg",
-    hlama: "IDR 2K",
-  },
-  {
-    nama: "Royale 500",
-    stars: 3,
-    harga: "IDR 500",
-    image: "royale-500.jpg",
-    hlama: "IDR 1K",
-  },
-];
 
-itemDetailButtons.forEach((itemDetailButton, i) => {
-  itemDetailButton.onclick = () => {
+document.onclick = (itemDetailButton) => {
+  if (
+    itemDetailButton.target.parentElement.className === "item-detail-button" ||
+    itemDetailButton.target.className === "item-detail-button"
+  ) {
     itemDetailModal.style.display = "flex";
-    namaProduk.textContent = dataProduk[i].nama;
-    imageProduk.setAttribute("src", "img/unggulan/" + dataProduk[i].image);
-    harga.innerHTML =
-      dataProduk[i].harga + ` <span>${dataProduk[i].hlama}</span>`;
-    stars.forEach((star, j) => {
-      if (j < dataProduk[i].stars) {
-        star.classList.add("star-full");
-      } else {
-        star.classList.remove("star-full");
-      }
-    });
-  };
-});
+  }
+};
 
 // klik tombol close modal
 const closeButtonModal = document.querySelector(".modal .close-icon");
